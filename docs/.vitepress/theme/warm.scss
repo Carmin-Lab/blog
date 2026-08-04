@@ -1,0 +1,65 @@
+:root {
+  --vp-c-brand-1: #bd735c;
+  --vp-c-brand-2: #d58d70;
+  --vp-c-brand-3: #e4aa89;
+  --vp-c-brand-soft: rgba(189, 115, 92, 0.14);
+  --vp-c-bg: #fbf7f2;
+  --vp-c-bg-alt: #f4ece4;
+  --vp-c-bg-soft: #f7f0e9;
+  --vp-c-text-1: #3f312d;
+  --vp-c-text-2: #715f58;
+  --vp-c-divider: rgba(116, 82, 70, 0.14);
+  --tk-home-card-bg-color: rgba(255, 252, 248, 0.82);
+}
+
+.dark {
+  --vp-c-bg: #171315;
+  --vp-c-bg-alt: #21191b;
+  --vp-c-bg-soft: #281e20;
+  --vp-c-text-1: #f8eee7;
+  --vp-c-text-2: #cdbbb1;
+  --vp-c-divider: rgba(255, 226, 205, 0.12);
+  --tk-home-card-bg-color: rgba(37, 27, 29, 0.82);
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 10%, rgba(221, 154, 119, 0.14), transparent 32rem),
+    radial-gradient(circle at 88% 32%, rgba(169, 116, 132, 0.1), transparent 36rem),
+    var(--vp-c-bg);
+}
+
+.VPNavBar,
+.tk-nav-blur {
+  backdrop-filter: blur(18px) saturate(125%);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+}
+
+.VPImage.logo {
+  border-radius: 50%;
+}
+
+.dark .tk-my {
+  color: #fff5ee !important;
+}
+
+.vp-doc a {
+  text-underline-offset: 3px;
+}
+
+.vp-doc blockquote {
+  border-left-color: rgba(189, 115, 92, 0.7);
+  background: rgba(189, 115, 92, 0.07);
+  border-radius: 0 10px 10px 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
