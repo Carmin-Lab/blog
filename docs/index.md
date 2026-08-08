@@ -1,5 +1,12 @@
 ---
-layout: home
-title: 庞俊杰的读博与生活
-description: 记录博士旅程、研究成长、项目实践与平静生活
+layout: page
+pageClass: digital-cottage-page
+title: 俊杰的数字小屋
+description: 连接医学人工智能、博士旅程、团队实践、创业探索与真实生活
+aside: false
+sidebar: false
+footer: false
+article: false
 ---
+
+<DigitalCottageHome />
