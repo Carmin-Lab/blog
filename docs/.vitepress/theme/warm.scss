@@ -23,10 +23,50 @@
 }
 
 body {
-  background:
-    radial-gradient(circle at 12% 10%, rgba(221, 154, 119, 0.14), transparent 32rem),
-    radial-gradient(circle at 88% 32%, rgba(169, 116, 132, 0.1), transparent 36rem),
-    var(--vp-c-bg);
+  background: var(--vp-c-bg);
+}
+
+.digital-cottage-page .VPContent {
+  margin-top: 0;
+  padding-top: 0 !important;
+}
+
+.digital-cottage-page .VPPage {
+  width: 100%;
+}
+
+.digital-cottage-page .VPNav {
+  --vp-c-text-1: #fff8f0;
+  --vp-c-text-2: rgba(255, 248, 240, 0.78);
+  --vp-c-divider: rgba(255, 236, 220, 0.16);
+}
+
+.digital-cottage-page .VPNavBar,
+.digital-cottage-page .VPNavBar.top {
+  background: rgba(31, 25, 29, 0.9) !important;
+  border-bottom-color: rgba(255, 236, 220, 0.12);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+}
+
+.digital-cottage-page .VPNavBarTitle,
+.digital-cottage-page .VPNavBarHamburger,
+.digital-cottage-page .VPNavBarHamburger .container,
+.digital-cottage-page .VPNavBarHamburger .top,
+.digital-cottage-page .VPNavBarHamburger .middle,
+.digital-cottage-page .VPNavBarHamburger .bottom {
+  color: #fff8f0 !important;
+}
+
+.digital-cottage-page .VPNavBarMenuLink:hover,
+.digital-cottage-page .VPNavBarMenuLink.active,
+.digital-cottage-page .VPNavBarMenuGroup:hover .text {
+  color: #f2b08f;
+}
+
+.cottage-home :where(*),
+.cottage-assistant :where(*) {
+  letter-spacing: 0 !important;
 }
 
 .tk-banner.is-full-img {
@@ -73,6 +113,43 @@ body {
   border-left-color: rgba(189, 115, 92, 0.7);
   background: rgba(189, 115, 92, 0.07);
   border-radius: 0 10px 10px 0;
+}
+
+.vp-doc h2 {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(116, 82, 70, 0.14);
+}
+
+.vp-doc h3 {
+  color: var(--vp-c-brand-1);
+}
+
+.vp-doc table {
+  display: table;
+  width: 100%;
+}
+
+.vp-doc img {
+  border: 1px solid rgba(116, 82, 70, 0.12);
+  border-radius: 6px;
+  box-shadow: 0 18px 48px rgba(72, 48, 42, 0.1);
+}
+
+.tk-article-info,
+.tk-breadcrumb {
+  font-size: 0.84rem;
+}
+
+.tk-article-share,
+.tk-article-update {
+  border-color: rgba(116, 82, 70, 0.14);
+}
+
+@media print {
+  .cottage-assistant {
+    display: none !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
