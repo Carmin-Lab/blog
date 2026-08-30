@@ -146,6 +146,12 @@ body {
   border-color: rgba(116, 82, 70, 0.14);
 }
 
+@media (min-width: 1280px) {
+  .VPContent:not(.is-home) .VPDoc {
+    width: calc(100% - 40px);
+  }
+}
+
 @media print {
   .cottage-assistant {
     display: none !important;

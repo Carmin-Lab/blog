@@ -50,6 +50,10 @@ function updatePeriod() {
           : "night";
 }
 
+function openCompanion() {
+  window.dispatchEvent(new CustomEvent("cottage-companion:open"));
+}
+
 onMounted(() => {
   updatePeriod();
   periodTimer = setInterval(updatePeriod, 60_000);
@@ -127,15 +131,20 @@ const contentMap = [
           </div>
         </div>
 
-        <div class="companion" aria-label="小屋 AI 同伴概念入口，即将开放">
+        <button
+          class="companion"
+          type="button"
+          aria-label="唤醒小灯数字伙伴"
+          @click="openCompanion"
+        >
           <div class="companion__orbit" aria-hidden="true">
             <i></i><i></i><i></i>
           </div>
           <div>
-            <span>AI COMPANION · PREVIEW</span>
-            <strong>小屋同伴正在学习中</strong>
+            <span>LOCAL COMPANION · AWAKE</span>
+            <strong>和小灯打个招呼</strong>
           </div>
-        </div>
+        </button>
 
         <a class="scroll-cue" href="#identity" aria-label="向下浏览身份与内容">
           <span>SCROLL TO EXPLORE</span><i aria-hidden="true"></i>
@@ -313,7 +322,9 @@ const contentMap = [
 .action:hover { transform: translateY(-2px); border-color: #f2c2a5; background-color: rgba(255, 248, 240, 0.11); }
 .action--primary:hover { background-color: #8f4433; }
 
-.companion { position: absolute; right: 0; bottom: 105px; display: flex; align-items: center; gap: 16px; padding: 12px 16px 12px 12px; border: 1px solid rgba(255, 242, 229, 0.26); background: rgba(28, 22, 23, 0.5); backdrop-filter: blur(14px); }
+.companion { position: absolute; right: 0; bottom: 105px; display: flex; align-items: center; gap: 16px; padding: 12px 16px 12px 12px; border: 1px solid rgba(255, 242, 229, 0.26); background: rgba(28, 22, 23, 0.5); color: inherit; text-align: left; cursor: pointer; backdrop-filter: blur(14px); transition: background-color .2s, border-color .2s, transform .2s; }
+.companion:hover { border-color: rgba(255, 222, 199, .5); background: rgba(40, 29, 29, .72); transform: translateY(-2px); }
+.companion:focus-visible { outline: 3px solid rgba(244, 176, 139, .7); outline-offset: 4px; }
 .companion__orbit { position: relative; width: 48px; height: 48px; border: 1px solid rgba(255, 205, 171, 0.38); border-radius: 50%; animation: rotate 12s linear infinite; }
 .companion__orbit::after { content: ""; position: absolute; inset: 15px; border-radius: 50%; background: #e58d68; box-shadow: 0 0 18px rgba(229, 141, 104, 0.75); }
 .companion__orbit i { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: #fff0e1; }
